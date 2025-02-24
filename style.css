@@ -1,0 +1,319 @@
+/* font poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: Poppins;
+    background-color: #000;
+    color: #eee;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+a{
+    text-decoration: none; /*text decoration de xoa cai gach chan di*/
+    color: #eee;
+}
+
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto; /* cho header contents vao giua man hinh*/
+    height: 50px;
+    display: flex; /* align items */
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+header a{
+    margin-right: 40px; /*tang khoang cach cho items o header*/
+}
+
+/* loops */
+.loops{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    position: relative; /* align img vao loops class (default absolute o ben duoi tu dong align vao body)*/
+}
+
+.loops .list .item{
+    position: absolute; /* lam cho image overlap */
+
+    /* top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+    inset: 0 0 0 0; /* seperate img voi border */
+}
+
+.loops .list .item img{
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; /* giup img k bi chong cheo len nhau*/
+    filter: brightness(50%)
+}
+
+.loops .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.loops .list .item .content .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-size: 3em;
+}
+
+.loops .list .item .content .title,
+.loops .list .item .content .topic{
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1.3em;
+}
+
+.loops .list .item .content .topic{
+    color: #f1683a;
+}
+
+.loops .list .item .content .buttons{
+    display: grid; /* chia cot neu sau nay lam them 1 nut nua*/
+    grid-template-columns: repeat(2, 130px);
+    gap: 5px;
+    grid-template-rows: 40px; /* button height */
+    margin-top: 20px;
+}
+
+.loops .list .item .content button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.loops .list .item .content button:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee
+}
+
+/* thumbnail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.thumbnail .item .content .title{
+    font-weight: bold;
+}
+
+
+.loops .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation effect */
+.loops .list .item:nth-child(1) .author,
+.loops .list .item:nth-child(1) .title,
+.loops .list .item:nth-child(1) .topic,
+.loops .list .item:nth-child(1) .des,
+
+.loops .list .item:nth-child(1) .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0); /* return content ve vi tri goc*/
+
+    }
+}
+
+.loops .list .item:nth-child(1) .title{
+    animation-delay: 1.2s;
+}
+
+.loops .list .item:nth-child(1) .topic{
+    animation-delay: 1.4s;
+}
+
+.loops .list .item:nth-child(1) .des{
+    animation-delay: 1.6s;
+}
+
+.loops .list .item:nth-child(1) .buttons{
+    animation-delay: 1.8s; /* buttons bi overlap, tang z-index len cao de xuat hien truoc */
+}
+
+/* effect next  */
+.loops.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+/* push img-listed dau tien xuong cuoi*/
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+
+/* .loops.next .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+@keyframes showThumbnail{
+    to{
+        width: 150px;
+    }
+} */
+
+.loops.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+}
+
+/* effect previous click */
+/* .loops.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.loops.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+.loops.prev .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.loops.prev .list.item:nth-child(2) .author,
+.loops.prev .list.item:nth-child(2) .title,
+.loops.prev .list.item:nth-child(2) .topic,
+.loops.prev .list.item:nth-child(2) .des,
+.loops.prev .list.item:nth-child(2) .buttons{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+} */
+/* 
+.loops.next .arrows button,
+.loops.prev .arrows button{
+    position: none;
+} */
+
+/* time */
+.time{
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.loops.next .time,
+.loops.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+    to{
+        width: 0;
+    }
+}
+
+/* mobile screen */
+@media screen and (max-width: 678px) {
+    .loops .list .item .content{
+        padding-right: 0;
+    }
+    .loops .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
