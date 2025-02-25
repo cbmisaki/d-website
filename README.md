@@ -11,9 +11,9 @@ inspired by lundev
 ## REGARDS
 
 * dev: @cb.misaki
-* contents: @_junqing_
+* contents: @`_junqing_`
 * design: @dinh_dtd, @suih.8012, @biughetdihoc, @uienu_15
-* images: @_gf.gofishing_ ( not included in my group )
+* images: @`_gf.gofishing_` ( not included in my group )
 
 
 
