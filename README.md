@@ -1,16 +1,12 @@
-# d-website (inspired by lundev)
-fonts: poppins
+* D-Website
+inspired by lundev
+
+## works
 html, js, css
 
-favicon: not using, too lazy to find one and put in
+favicon: doesnt have one, cant design
 
----- Regards ----
+fonts: poppins
 
-content, text and paragaph: @_junqing_
-design: @biughetdihoc, @uienu_15, @suih.8012, @dinh_dtd
-dev: @cb.misaki
-
-others contributes: group 2, 22-D-25
-
-----
+## REGARDS
 
