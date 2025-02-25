@@ -8,7 +8,7 @@ let listItemDom = document.querySelector('.loops .list');
 let thumbnailDom = document.querySelector('.loops .thumbnail');
 
 let timeRunning = 3000;
-let timeAutoNext = 20000;
+let timeAutoNext = 15000;
 let runTimeOut;
 let runAutoRun;
 
