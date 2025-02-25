@@ -16,7 +16,7 @@ function showSlider(){
     let itemSlider = document.querySelectorAll('.loops .list .item');
     let itemThumbnail = document.querySelectorAll('.loops .thumbnail .item');
 
-    // Auto switch: push the first item to the end
+    // Auto switch: items dau tien -> cuoi cung
     listItemDom.appendChild(itemSlider[0]);
     thumbnailDom.appendChild(itemThumbnail[0]);
     loopsDom.classList.add('next');
@@ -32,6 +32,6 @@ function showSlider(){
     }, timeAutoNext);
 }
 
-// Start auto switching
+// start auto switching
 showSlider();
 
